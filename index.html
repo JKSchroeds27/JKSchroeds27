@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pendo Demo</title>
+
+  <!-- ✅ Pendo Install Snippet (replace YOUR-API-KEY with your key) -->
+  <script>
+    (function(apiKey){
+      (function(p,e,n,d,o){
+        var v,w,x,y,z;
+        o=p[d]=p[d]||{};
+        o._q=[];
+        v=['initialize','identify','updateOptions','pageLoad','track'];
+        for(w=0,x=function(m){
+          return function(){
+            o._q.push([m].concat([].slice.call(arguments,0)));
+          };
+        },y=0;y<v.length;y++)o[v[y]]=x(v[y]);
+        z=e.createElement(n);
+        z.async=!0;
+        z.src='https://cdn.pendo.io/agent/static/' + apiKey + '/pendo.js';
+        e=e.getElementsByTagName(n)[0];
+        e.parentNode.insertBefore(z,e);
+      })(window,document,'script','pendo');
+    })('d72e65de-17db-4729-4229-70a9cad5d1fd');
+  </script>
+
+</head>
+<body>
+  <h1>Welcome to Your Pendo Demo Page</h1>
+  <button class="create-contact">Create Contact</button>
+  <button class="export-btn">Export Data</button>
+</body>
+</html>
