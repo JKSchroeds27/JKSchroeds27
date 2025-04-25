@@ -5,27 +5,37 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<script>
+<!-- Pendo Snippet Start -->
+<script>
   (function(apiKey){
     (function(p,e,n,d,o){
-      var v,w,x,y,z;
-      o=p[d]=p[d]||{};
-      o._q=[];
+      var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
       v=['initialize','identify','updateOptions','pageLoad','track'];
-      for(w=0,x=function(m){
-        return function(){
-          o._q.push([m].concat([].slice.call(arguments,0)));
+      for(w=0,x=v.length;w<x;++w)(function(m){
+        o[m]=o[m]||function(){
+          o._q[m==='initialize'?'unshift':'push']([m].concat([].slice.call(arguments,0)));
         };
-      },y=0;y<v.length;y++)o[v[y]]=x(v[y]);
-      z=e.createElement(n);
-      z.async=!0;
-      z.src='https://cdn.pendo.io/agent/static/' + apiKey + '/pendo.js';
-      e=e.getElementsByTagName(n)[0];
-      e.parentNode.insertBefore(z,e);
+      })(v[w]);
+      y=e.createElement(n);y.async=!0;
+      y.src='https://cdn.pendo.io/agent/static/d72e65de-17db-4729-4229-70a9cad5d1fd/pendo.js';
+      z=e.getElementsByTagName(n)[0];
+      z.parentNode.insertBefore(y,z);
     })(window,document,'script','pendo');
   })('d72e65de-17db-4729-4229-70a9cad5d1fd');
 </script>
+<script>
+  pendo.initialize({
+    visitor: {
+      id: 'demo-visitor-1'
+    },
+    account: {
+      id: 'demo-account-1'
+    }
+  });
+</script>
+<!-- Pendo Snippet End -->
+	<head>
+
 
 
 		<title>Massively by HTML5 UP</title>
